@@ -23,12 +23,4 @@ services:
         restart: unless-stopped
 
 
-# Entrar en couchdb
-# 5984/_utils
- 
-# Examples:
-# http://localhost:5984/mybudget
-# http://username:password@192.168.1.10:5984/mybudget
-
-
-        
+       
