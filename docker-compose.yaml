@@ -1,0 +1,34 @@
+version: '3.3'
+
+services:
+
+    budgetzero:
+        image: budgetzero/budgetzero:latest
+        container_name: budgetzero        
+        ports:
+            - '8200:8080'
+        restart: unless-stopped
+
+
+    couchdb:
+        image: couchdb:latest
+        container_name: budgetzero-couchdb-sync
+        ports:
+            - '5984:5984'
+        environment:
+            - COUCHDB_USER=admin
+            - COUCHDB_PASSWORD=p4ssw0rd
+        volumes:
+            - ./couchdb/data:/opt/couchdb/data         
+        restart: unless-stopped
+
+
+# Entrar en couchdb
+# 5984/_utils
+ 
+# Examples:
+# http://localhost:5984/mybudget
+# http://username:password@192.168.1.10:5984/mybudget
+
+
+        
